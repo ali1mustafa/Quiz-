@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Carbohydrates MCQ Quiz</title>
+<style>
+:root{--bg:#f1f6f5;--card:#fff;--tx:#14322d;--mu:#587570;--ac:#0b8f7a;--ac2:#e6f4f1;--bd:#d3e3df;--ok:#dff5e9;--okb:#1d9b62;--no:#fde7e7;--nob:#d34545}
+@media(prefers-color-scheme:dark){:root{--bg:#0d1816;--card:#13241f;--tx:#e2f0ec;--mu:#8badA4;--ac:#3cc9a8;--ac2:#173830;--bd:#244039;--ok:#123a2a;--okb:#3fcb8c;--no:#3b1b1e;--nob:#f06d6d}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 "Segoe UI",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px)}
+header{background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:5;padding:10px 14px 8px}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;max-width:760px;margin:0 auto}
+h1{font-size:1.15rem;margin:0;font-weight:700}
+.sc{font-size:.85rem;color:var(--mu);white-space:nowrap}
+.sc b{color:var(--ac)}
+.tabs{display:flex;gap:6px;overflow-x:auto;max-width:760px;margin:8px auto 0;padding-bottom:4px;scrollbar-width:thin}
+.tabs button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.tabs button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.tabs button:focus-visible,.o:focus-visible,.rs:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:14px}
+.th{display:flex;justify-content:space-between;align-items:center;margin:4px 0 12px}
+.th h2{font-size:1.05rem;margin:0}
+.rs{border:1px solid var(--bd);background:none;color:var(--mu);border-radius:8px;padding:4px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.q p{margin:0 0 10px;font-weight:600}
+.n{color:var(--ac);margin-right:6px}
+.o{display:flex;gap:10px;width:100%;text-align:left;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:9px;padding:9px 11px;margin-top:7px;font:inherit;font-size:.95rem;cursor:pointer;transition:background .15s,border-color .15s}
+.o:hover:not(:disabled){background:var(--ac2);border-color:var(--ac)}
+.o i{font-style:normal;font-weight:700;color:var(--ac);min-width:1.2em}
+.o:disabled{cursor:default;color:var(--tx)}
+.o.c{background:var(--ok);border-color:var(--okb)}
+.o.w{background:var(--no);border-color:var(--nob)}
+.f{font-size:.85rem;margin-top:9px;font-weight:600}
+.f.c{color:var(--okb)}.f.w{color:var(--nob)}
+footer{text-align:center;color:var(--mu);font-size:.85rem;padding:18px 14px calc(26px + env(safe-area-inset-bottom,0px))}
+</style></head><body>
+<header><div class="top"><h1>Carbohydrates MCQ Quiz</h1><div class="sc" id="sc"></div></div><nav class="tabs" id="tabs"></nav></header>
+<main><div class="th"><h2 id="tt"></h2><button class="rs" id="rs">Reset this topic</button></div><div id="list"></div></main>
+<footer>© By: Ali Mustafa</footer>
+<script>
+const T=[
+["Importance",[
+"Which carbohydrate polymer lubricates skeletal joints?|Heparin|Keratan sulphate|Hyaluronic acid|Cellulose|Dextran|2",
+"The ABO blood group antigens illustrate which function of carbohydrates?|Energy storage|Biological specificity and recognition on the cell membrane|Lubrication of joints|Anticoagulation|Plant structure|1",
+"The general formula of carbohydrates is:|CnH2nO2|CnH2n+2|(CH2O)n|(CHO)2n|CnHnOn+1|2",
+"The smallest possible value of n in (CH2O)n is:|1|2|4|5|3|4",
+"Carbohydrates covalently linked to lipids are called:|Glycolipids|Lipoproteins|Mucins|Nucleotides|Proteoglycans|0",
+"Which sugars form part of the structure of nucleic acids?|Glucose and fructose|Galactose and mannose|Lactose and maltose|Ribose and deoxyribose|Xylose and arabinose|3"]],
+["Monosaccharides",[
+"A six-carbon monosaccharide is called a:|Triose|Tetrose|Pentose|Heptose|Hexose|4",
+"Glyceraldehyde is classified as an:|Aldotriose|Ketotriose|Aldotetrose|Ketopentose|Aldohexose|0",
+"Dihydroxyacetone is a ketose because its most oxidized group is:|Aldehyde|Carboxyl|Keto (C=O)|Amino|Ester|2",
+"Which ketose is an exception to the “-ulose” suffix rule?|Xylulose|Ribulose|Erythrulose|Sedoheptulose|Fructose|4",
+"Neuraminic acid is an example of a:|Pentose|Hexose|Heptose|Nonose|Tetrose|3",
+"Which hexose is known as blood sugar and is the main energy source?|D-Fructose|D-Glucose|D-Galactose|D-Mannose|D-Ribose|1",
+"D-Galactose is a constituent of:|Sucrose|Maltose|Lactose|Inulin|Starch|2",
+"The bond joining monosaccharides into larger structures is the:|Peptide bond|Phosphodiester bond|Ester bond|Glycosidic bond|Disulfide bond|3"]],
+["Isomers & Epimers",[
+"Glucose, fructose, mannose and galactose all share the formula:|C5H10O5|C6H12O6|C12H22O11|C6H10O5|C3H6O3|1",
+"Compounds with the same chemical formula but different structures are:|Anomers|Epimers|Enantiomers|Isomers|Polymers|3",
+"Glucose and galactose are epimers at carbon:|C-1|C-2|C-3|C-5|C-4|4",
+"Glucose and mannose are epimers at carbon:|C-2|C-1|C-3|C-4|C-6|0",
+"Mirror-image stereoisomers are called:|Epimers|Anomers|Enantiomers|Aldoses|Ketoses|2",
+"In a D-sugar, the –OH on the asymmetric carbon farthest from the carbonyl carbon lies on the:|Left|Right|Ring oxygen|Carbonyl carbon|Anomeric side only|1",
+"Enzymes that interconvert D- and L-isomers are called:|Mutases|Kinases|Hydrolases|Racemases|Phosphatases|3"]],
+["Cyclization & Anomers",[
+"A pyranose ring consists of:|Four carbons and one oxygen|Five carbons and one oxygen|Six carbons and one oxygen|Five carbons and two oxygens|Four carbons and two oxygens|1",
+"A furanose ring is:|Six-membered with 5 C + 1 O|Seven-membered|Five-membered with 4 C + 1 O|Four-membered|Open-chain|2",
+"After cyclization, the carbonyl carbon becomes the:|Anomeric carbon|Methyl carbon|Carboxyl carbon|Terminal carbon|Epimeric carbon|0",
+"α-Glucose and β-glucose differ in the –OH position at carbon:|C-6|C-4|C-2|C-3|C-1|4",
+"In α-glucose, the –OH on C-1 is oriented:|Upwards|Downwards|Replaced by NH2|Absent|Linked to C-6|1",
+"Which polymer is made of β-glucose and cannot be digested by humans?|Starch|Glycogen|Amylose|Cellulose|Dextran|3",
+"The predominant form of D-fructose in solution is:|α-fructopyranose|α-fructofuranose|Open-chain form|β-fructofuranose|β-fructopyranose|4"]],
+["Pentoses",[
+"Ribose is a constituent of:|DNA only|RNA, ATP and NAD|Glycogen|Cellulose|Heparin|1",
+"Deoxyribose lacks the –OH group at carbon:|1|3|2|4|5|2",
+"Which pentose is an intermediate of the hexose monophosphate shunt?|Xylose|Arabinose|Ribulose|Fructose|Mannose|2",
+"The name arabinose is derived from:|Arabic numerals|Gum arabic|Arabian horses|Arabidopsis|Cherries only|1",
+"Xylulose is an intermediate of the:|Glycolysis|TCA cycle|Urea cycle|Uronic acid pathway|Glycogenesis|3"]],
+["Disaccharides",[
+"Sucrose is composed of:|Glucose + galactose|Glucose + fructose|Glucose + glucose|Galactose + fructose|Mannose + glucose|1",
+"Why is sucrose a non-reducing sugar?|It contains a β linkage|It contains a 1,6 linkage|It has no hydroxyl groups|It is a ketose|Both anomeric carbons are involved in the glycosidic bond|4",
+"A solution that is non-reducing but becomes reducing after hydrolysis contains:|Maltose|Sucrose|Lactose|Isomaltose|Glucose|1",
+"The glycosidic linkage in lactose is:|α-1,4|α-1,6|β-1,4|β-1,2|α-1,2|2",
+"Hydrolysis of lactose yields:|Glucose + fructose|Glucose + galactose|Two glucose|Galactose + fructose|Mannose + galactose|1",
+"Maltose consists of two glucose units joined by:|β-1,4|α-1,6|β-1,6|α-1,4|α-1,2|3",
+"Isomaltose contains two glucose units joined by:|α-1,4|β-1,4|α-1,2|β-1,2|α-1,6|4",
+"Which disaccharide is NOT a reducing sugar?|Maltose|Lactose|Sucrose|Isomaltose|All are reducing|2",
+"Partial hydrolysis of starch and glycogen produces:|Sucrose|Lactose|Isomaltose|Galactose|Inulin|2"]],
+["Polysaccharides",[
+"Which of the following is a homoglycan?|Hyaluronic acid|Heparin|Starch|Chondroitin sulphate|Agar|2",
+"Amylose is made of glucose units joined by:|α-1,4 bonds in an unbranched chain|α-1,6 bonds in a branched chain|β-1,4 bonds|β-1,2 bonds|α-1,3 bonds|0",
+"The branch points in amylopectin are formed by:|α-1,4 linkages|β-1,4 linkages|α-1,6 linkages|β-1,2 linkages|α-1,3 linkages|2",
+"Which part of starch dissolves in boiling water (10–20%)?|Amylopectin|Glycogen|Cellulose|Inulin|Amylose|4",
+"The primer protein at the core of glycogen is:|Glycophorin|Glycogenin|Albumin|Collagen|Keratin|1",
+"Compared with amylopectin, glycogen is:|Less branched|Unbranched|More branched and more compact|Made of β-glucose|Made of fructose|2",
+"Cellulose is made of glucose units joined by:|α-1,4 linkages|α-1,6 linkages|β-1,2 linkages|β-1,4 linkages|α-1,3 linkages|3",
+"Humans cannot digest cellulose because they lack the enzyme:|Amylase|Maltase|Lactase|Sucrase|Cellobiase|4",
+"Inulin is a fructose homoglycan (β-1,2 links) clinically used to measure:|Blood glucose|Glomerular filtration rate|Cholesterol|Liver enzymes|Blood volume|1",
+"Dextrans are used clinically as:|Anticoagulants|Antibiotics|Plasma volume expanders in hypovolemic shock|Sweeteners|Culture media|2"]],
+["Derivatives",[
+"Agar is prepared from:|Potatoes|Seaweeds|Sugarcane|Cotton|Animal lungs|1",
+"Agarose is composed of galactose and:|Glucose|3,6-Anhydrogalactose|Fructose|Mannose|Xylose|1",
+"Sorbitol and mannitol are examples of:|Sugar acids|Amino sugars|Disaccharides|Sugar alcohols|Heteroglycans|3",
+"Compared with their parent sugars, sugar alcohols have:|Two fewer hydrogens|Two more hydrogens|One extra carbon|A carboxyl group|An amino group|1",
+"Gluconic acid, formed by oxidation of the aldehyde group of glucose, is a(n):|Uronic acid|Aldaric acid|Aldonic acid|Amino sugar|Sugar alcohol|2",
+"Uronic acids have a carboxyl group at:|Carbon 1|The highest-numbered carbon|Carbon 2|Carbon 3|The anomeric carbon|1",
+"In glucosamine, the –OH on carbon 2 is replaced by:|Sulphate group|Carboxyl group|Methyl group|Amino group|Phosphate group|3"]],
+["GAGs",[
+"Glycosaminoglycans are heteropolysaccharides containing:|Uronic acid and amino sugars|Only glucose|Only fructose|Fatty acids|Nucleotides|0",
+"GAGs form viscous solutions because their charged groups:|Repel water|Attract water molecules|Are hydrophobic|Form disulfide bonds|Are non-polar|1",
+"The repeating unit of hyaluronic acid is:|Galactose + glucose|Glucose + fructose|N-Acetylglucosamine + glucuronic acid|Iduronic acid + GalNAc|Galactose + GlcNAc|2",
+"Which GAG is used as an anticoagulant?|Hyaluronic acid|Keratan sulphate|Dermatan sulphate|Heparin|Chondroitin sulphate|3",
+"Heparin contains repeating units of sulphated glucosamine and:|D-Glucuronic acid|L-Iduronic acid|Galactose|Fructose|Mannose|1",
+"Idose is which epimer of glucose?|C-2 epimer|C-4 epimer|C-3 epimer|C-1 epimer|C-5 epimer|4",
+"Which GAG contains no uronic acid?|Keratan sulphate|Heparin|Hyaluronic acid|Chondroitin sulphate|Dermatan sulphate|0",
+"Dermatan sulphate is found in:|Cornea only|Skin, blood vessels and heart valves|Synovial fluid|Liver glycogen|Plant cell walls|1",
+"Chondroitin sulphate is widely distributed in:|Cartilage, bone, tendons, cornea and skin|Blood plasma|RBC cytoplasm|Bile|Urine|0"]],
+["Glycoproteins",[
+"Carbohydrate content in a glycoprotein is generally:|More than 10%|Exactly 50%|Less than 10%|100%|Zero|2",
+"A protein with more than 10% carbohydrate is generally called a:|Lipoprotein|Mucoprotein|Nucleoprotein|Chromoprotein|Phosphoprotein|1",
+"The major membrane glycoprotein of erythrocytes is:|Hemoglobin|Spectrin|Glycophorin|Actin|Albumin|2",
+"About what percentage of the cell membrane weight is carbohydrate?|5%|25%|50%|75%|1%|0",
+"“Mucoprotein” is now often considered an obsolete synonym for:|Collagen|Keratin|Elastin|Mucin|Myosin|3",
+"Which abbreviation stands for N-acetylneuraminic acid, a glycoprotein sugar residue?|NANA|GlcNAc|GalNAc|Fuc|Man|0"]]
+];
+const L="ABCDE",all=[],A={};let cur=-1;
+T.forEach((t,i)=>t[1].forEach(s=>{const p=s.split("|");all.push({t:i,q:p[0],o:p.slice(1,6),k:+p[6]})}));
+const $=id=>document.getElementById(id);
+const view=()=>all.map((x,id)=>({...x,id})).filter(x=>cur<0||x.t===cur);
+function render(){
+ const v=view(),a=v.filter(x=>x.id in A),c=a.filter(x=>A[x.id]===x.k).length;
+ $("tt").textContent=(cur<0?"All topics":T[cur][0])+" ("+v.length+" questions)";
+ $("sc").innerHTML="Answered "+a.length+"/"+v.length+" · Correct <b>"+c+"</b>";
+ $("tabs").innerHTML=["All",...T.map(t=>t[0])].map((n,i)=>`<button class="${i-1===cur?"on":""}" data-i="${i-1}">${n}</button>`).join("");
+ $("list").innerHTML=v.map((x,n)=>{const d=x.id in A;
+  return `<div class="q"><p><span class="n">${n+1}.</span>${x.q}</p>`+x.o.map((o,j)=>`<button class="o ${d?(j===x.k?"c":j===A[x.id]?"w":""):""}" data-id="${x.id}" data-j="${j}" ${d?"disabled":""}><i>${L[j]}.</i><span>${o}</span></button>`).join("")+(d?`<div class="f ${A[x.id]===x.k?"c":"w"}">${A[x.id]===x.k?"Correct":"Wrong — the correct answer is "+L[x.k]}</div>`:"")+`</div>`}).join("");
+}
+$("tabs").onclick=e=>{const b=e.target.closest("button");if(b){cur=+b.dataset.i;render();scrollTo(0,0)}};
+$("list").onclick=e=>{const b=e.target.closest(".o");if(b&&!b.disabled){A[b.dataset.id]=+b.dataset.j;render()}};
+$("rs").onclick=()=>{view().forEach(x=>delete A[x.id]);render()};
+render();
+</script></body></html>
