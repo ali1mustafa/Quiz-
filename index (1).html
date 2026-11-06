@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lipids MCQ Quiz</title>
+<style>
+:root{--bg:#f5f4ee;--card:#fff;--tx:#2b2615;--mu:#7a7256;--ac:#9a6410;--ac2:#fbf1d9;--bd:#e3dcc3;--ok:#e0f4e6;--okb:#1d9b4f;--no:#fde7e7;--nob:#d34545}
+@media(prefers-color-scheme:dark){:root{--bg:#16140c;--card:#211e12;--tx:#f1ecd6;--mu:#b3aa86;--ac:#f0b429;--ac2:#33290f;--bd:#3d3720;--ok:#123a22;--okb:#45cf7d;--no:#3b1b1e;--nob:#f06d6d}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--tx);font:16px/1.55 "Segoe UI",system-ui,sans-serif;padding-top:env(safe-area-inset-top,0px)}
+header{background:var(--card);border-bottom:1px solid var(--bd);position:sticky;top:0;z-index:5;padding:10px 14px 8px}
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;max-width:760px;margin:0 auto}
+h1{font-size:1.15rem;margin:0;font-weight:700}
+.sc{font-size:.85rem;color:var(--mu);white-space:nowrap}
+.sc b{color:var(--ac)}
+.tabs{display:flex;gap:6px;overflow-x:auto;max-width:760px;margin:8px auto 0;padding-bottom:4px;scrollbar-width:thin}
+.tabs button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:999px;padding:5px 12px;font:inherit;font-size:.85rem;cursor:pointer}
+.tabs button.on{background:var(--ac);border-color:var(--ac);color:#fff}
+@media(prefers-color-scheme:dark){.tabs button.on{color:#1b1604}}
+.tabs button:focus-visible,.o:focus-visible,.rs:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:14px}
+.th{display:flex;justify-content:space-between;align-items:center;margin:4px 0 12px}
+.th h2{font-size:1.05rem;margin:0}
+.rs{border:1px solid var(--bd);background:none;color:var(--mu);border-radius:8px;padding:4px 10px;font:inherit;font-size:.8rem;cursor:pointer}
+.q{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:12px}
+.q p{margin:0 0 10px;font-weight:600}
+.n{color:var(--ac);margin-right:6px}
+.o{display:flex;gap:10px;width:100%;text-align:left;border:1px solid var(--bd);background:var(--card);color:var(--tx);border-radius:9px;padding:9px 11px;margin-top:7px;font:inherit;font-size:.95rem;cursor:pointer;transition:background .15s,border-color .15s}
+.o:hover:not(:disabled){background:var(--ac2);border-color:var(--ac)}
+.o i{font-style:normal;font-weight:700;color:var(--ac);min-width:1.2em}
+.o:disabled{cursor:default;color:var(--tx)}
+.o.c{background:var(--ok);border-color:var(--okb)}
+.o.w{background:var(--no);border-color:var(--nob)}
+.f{font-size:.85rem;margin-top:9px;font-weight:600}
+.f.c{color:var(--okb)}.f.w{color:var(--nob)}
+footer{text-align:center;color:var(--mu);font-size:.85rem;padding:18px 14px calc(26px + env(safe-area-inset-bottom,0px))}
+</style></head><body>
+<header><div class="top"><h1>Lipids MCQ Quiz</h1><div class="sc" id="sc"></div></div><nav class="tabs" id="tabs"></nav></header>
+<main><div class="th"><h2 id="tt"></h2><button class="rs" id="rs">Reset this topic</button></div><div id="list"></div></main>
+<footer>© By: Ali Mustafa</footer>
+<script>
+const T=[
+["Introduction",[
+"Lipids are best defined as compounds that are:|Soluble in water and insoluble in ether|Insoluble in water and soluble in nonpolar solvents|Soluble in both water and chloroform|Insoluble in all solvents|Soluble only in acids|1",
+"Which of the following is a nonpolar solvent used to dissolve lipids?|Water|Saline|Dilute HCl|Chloroform|Urea solution|3",
+"Nonpolar lipids act as electrical insulators in:|Red blood cells|Myelinated nerves|Skeletal muscle|Liver cells|Bone|1",
+"Lipids are transported in the blood as:|Free triglycerides|Glycoproteins|Lipoproteins|Free fatty acids only|Phospholipids only|2",
+"Which fat-soluble vitamins are absorbed with the help of dietary lipids?|B and C|A, D, E and K|B12 and folate|C and E only|A and B6|1",
+"Subcutaneous fat mainly provides:|Oxygen transport|Enzyme catalysis|Thermal insulation|Genetic coding|Muscle contraction|2",
+"Which lipids act as metabolic regulators?|Waxes|Triacylglycerols|Cerebrosides|Steroid hormones and prostaglandins|Sulfatides|3"]],
+["Classification",[
+"Simple lipids are esters of fatty acids with:|Various alcohols|Phosphate only|Proteins|Carbohydrates only|Sphingosine only|0",
+"Fats are esters of fatty acids with:|Cholesterol|Glycerol|Sphingosine|Inositol|Long-chain monohydric alcohols|1",
+"Waxes are esters of fatty acids with:|Glycerol|Sphingosine|Phosphoric acid|High molecular weight monohydric alcohols|Glucose|3",
+"Oils are best described as:|Waxes in the solid state|Steroids|Phospholipids|Lipoproteins|Fats in the liquid state|4",
+"Complex lipids differ from simple lipids because they contain:|Only fatty acids|Only glycerol|Additional groups such as phosphate, carbohydrate or a nitrogenous base|Only a steroid nucleus|No alcohol|2",
+"Which of the following is a complex lipid?|Cholesterol|Palmitic acid|Ketone body|Phospholipid|Vitamin A|3",
+"Derived lipids are products of:|Protein synthesis|DNA replication|Glycolysis|Carbohydrate digestion|Hydrolysis of simple and complex lipids|4",
+"Which of the following is a derived lipid?|Lecithin|Sphingomyelin|Cholesterol|Ganglioside|Cerebroside|2"]],
+["Fatty Acids",[
+"Fatty acids are classified as:|Simple lipids|Complex lipids|Derived lipids|Waxes|Steroids|2",
+"The general formula of a fatty acid is:|R–CHO|R–CO–OH|R–NH2|R–O–R|R–CO–R|1",
+"Most naturally occurring fatty acids have:|Branched odd-numbered chains|Aromatic rings|Unbranched even-numbered chains|Nitrogen atoms|Phosphate groups|2",
+"Palmitic acid has how many carbon atoms?|12|14|18|16|20|3",
+"Which fatty acid makes up about 50% of human body fat?|Oleic acid|Palmitic acid|Linoleic acid|Stearic acid|Arachidonic acid|0",
+"Unsaturated fatty acids are named using the suffix:|-anoic|-enoic|-ylic|-itol|-amine|1",
+"Naturally occurring unsaturated fatty acids usually have the ____ configuration:|Trans|Racemic|Cis|Cyclic|Branched|2",
+"Which pair are the essential fatty acids?|Oleic and palmitic|Linoleic and linolenic|Stearic and oleic|Acetic and butyric|Palmitoleic and oleic|1",
+"Linoleic acid belongs to which family and has how many double bonds?|ω3, three|ω9, one|ω6, two|ω6, four|ω3, five|2",
+"Arachidonic acid has how many carbons and double bonds?|C18, 3|C20, 5|C22, 6|C16, 1|C20, 4|4",
+"Saturated fatty acids are waxy at room temperature while unsaturated ones are oily because:|Saturated chains pack more tightly|Unsaturated chains are longer|Saturated acids are ionized|Unsaturated acids have more oxygen|Saturated acids are branched|0",
+"Fish oils are rich in which type of fatty acid?|Saturated short-chain|Odd-chain|ω9 monounsaturated|ω3 polyunsaturated|Trans fatty acids|3"]],
+["Triacylglycerols & Waxes",[
+"Triacylglycerols consist of:|Two fatty acids and glycerol|Three fatty acids and glycerol|Three fatty acids and sphingosine|Fatty acids and phosphate|Glycerol and cholesterol|1",
+"The bond between glycerol and fatty acids in triacylglycerols is a(n):|Peptide bond|Glycosidic bond|Ester bond|Phosphodiester bond|Amide bond|2",
+"Triolein contains which fatty acid in all three positions?|Stearic acid|Palmitic acid|Linoleic acid|Arachidonic acid|Oleic acid|4",
+"Triacylglycerols are nonpolar because:|Their polar groups are bound in ester linkages|They contain phosphate|They contain sugars|They contain amino groups|They are ionized|0",
+"Specialized cells that store triacylglycerols are called:|Hepatocytes|Adipocytes|Neurons|Erythrocytes|Platelets|1",
+"Enzymes that hydrolyze stored triacylglycerols are:|Amylases|Proteases|Lipases|Kinases|Racemases|2",
+"Why are triacylglycerols a better fuel store than glycogen?|They carry water of hydration|They are more oxidized|They contain more nitrogen|Their oxidation yields over twice the energy per gram|They are water-soluble|3",
+"Waxes are esters of long-chain fatty acids with:|Glycerol|Long-chain alcohols|Sphingosine|Inositol|Choline|1",
+"Compared with triacylglycerols, waxes have melting points that are:|Lower|Equal|Higher|Variable|Undefined|2",
+"Waxes secreted by vertebrate skin glands function to:|Store energy|Transport lipids|Carry electrons|Regulate gene expression|Waterproof and lubricate skin and hair|4"]],
+["Phospholipids",[
+"Phospholipids contain, in addition to fatty acids and an alcohol:|A carbohydrate|A phosphoric acid residue|A steroid nucleus|An isoprene unit|A protein|1",
+"In glycerophospholipids the alcohol is:|Sphingosine|Inositol|Cholesterol|Glycerol|Choline|3",
+"In sphingophospholipids the alcohol is:|Glycerol|Inositol|Sphingosine|Serine|Ethanolamine|2",
+"Lecithin is also known as:|Phosphatidylethanolamine|Phosphatidylserine|Phosphatidylcholine|Cardiolipin|Sphingomyelin|2",
+"Cephalin is also known as:|Phosphatidylcholine|Phosphatidylinositol|Ceramide|Sphingomyelin|Phosphatidylethanolamine|4",
+"Cardiolipin is also called:|Diphosphatidylglycerol|Phosphatidylcholine|Phosphatidylserine|Sphingomyelin|Ceramide|0",
+"Sphingomyelin is found mainly in the:|Liver|Adipose tissue|Myelin sheath of nerve fibers|Muscle|Bone|2",
+"The main lipid components of biological membranes are:|Triglycerides|Phospholipids|Waxes|Steroid hormones|Free fatty acids|1",
+"At pH 7, which glycerophospholipid has a net charge of 0?|Phosphatidylserine|Phosphatidic acid|Phosphatidylglycerol|Phosphatidylcholine|Cardiolipin|3"]],
+["Glycolipids & Others",[
+"In glycolipids, a sugar takes the place of:|Sphingosine|Fatty acid|Phosphate|Ceramide|Cholesterol|2",
+"Cerebrosides contain:|One sugar (glucose or galactose)|Sialic acid|A sulfate group only|Phosphate|Cardiolipin|0",
+"Sulfatides consist of ceramide linked to:|Glucose|Sulfated galactose|Phosphocholine|Sialic acid|Inositol|1",
+"Gangliosides contain oligosaccharides with:|Phosphate|Sulfate only|Glycerol|Cholesterol|Sialic acid residues|4",
+"Gangliosides are found mainly in the:|Gray matter of the brain|Liver|Adipose tissue|Kidney|Skin|0",
+"Sulfatides are important components of:|Blood clots|Digestive juices|Myelin membranes|Visual pigments|Fat droplets|2",
+"Lipoproteins such as LDL and HDL function in:|Lipid digestion|Lipid synthesis|Wax formation|Lipid transport in blood|Vitamin synthesis|3",
+"Phosphoinositides are important in:|Energy storage|Cell signaling|Waterproofing|Bile formation|Vision|1",
+"Which components are absent in glycolipids?|Glycerol and phosphate|Fatty acid and sphingosine|Sugar|Ceramide|Fatty acid|0"]],
+["Sterols & Steroids",[
+"The steroid nucleus consists of:|Four fused rings: three six-carbon and one five-carbon|Three fused rings|Two six-carbon rings|Five six-carbon rings|A single aromatic ring|0",
+"The major sterol in animal tissues is:|Ergosterol|Cholesterol|Testosterone|Cortisol|Estradiol|1",
+"The polar head group of cholesterol is the hydroxyl group at:|C-1|C-5|C-3|C-10|C-17|2",
+"The hydrocarbon side chain of cholesterol is attached at:|C-3|C-17|C-5|C-10|C-13|1",
+"Bile acids function as:|Vitamins|Hormones|Detergents that emulsify dietary fats|Electron carriers|Energy stores|2",
+"Steroid hormones act mainly by:|Binding membrane enzymes|Hydrolyzing fats|Transporting oxygen|Forming blood clots|Regulating gene expression through nuclear receptors|4",
+"Steroids differ from sterols because they lack:|The four rings|Double bonds|The alkyl side chain on ring D|Hydrogen atoms|Carbon atoms|2",
+"Testosterone is produced mainly in the:|Ovaries|Adrenal cortex|Placenta|Testes|Pancreas|3",
+"Aldosterone mainly regulates:|Glucose metabolism|Bone growth|Salt excretion|Vision|Blood clotting|2",
+"Prednisolone and prednisone are synthetic steroids used as:|Anticoagulants|Antibiotics|Sex hormones|Anti-inflammatory agents|Vitamins|3"]],
+["Eicosanoids",[
+"Eicosanoids are derived from which fatty acid?|Linoleic acid|Oleic acid|Arachidonic acid|Palmitic acid|Stearic acid|2",
+"Eicosanoids are paracrine hormones, meaning they:|Act on distant organs via blood|Act on cells near their site of synthesis|Act only inside the nucleus|Are stored in adipose tissue|Are bile salts|1",
+"The three classes of eicosanoids are:|Sterols, bile acids, vitamins|Cerebrosides, gangliosides, sulfatides|Prostaglandins, thromboxanes, leukotrienes|Lecithin, cephalin, cardiolipin|Waxes, fats, oils|2",
+"Prostaglandins contain:|A five-carbon ring|A six-membered ether ring|Three conjugated double bonds|A sulfate group|A steroid nucleus|0",
+"Thromboxanes are produced by:|Leukocytes|Hepatocytes|Platelets|Adipocytes|Neurons|2",
+"Leukotrienes contain:|A five-carbon ring|Three conjugated double bonds|A six-membered ether ring|No double bonds|A phosphate group|1",
+"Overproduction of leukotrienes is associated with:|Anemia|Rickets|Night blindness|Asthma attacks|Scurvy|3",
+"Arachidonic acid is released from membrane phospholipids by:|Phospholipase A2|Amylase|Lipoprotein lipase|Pepsin|Trypsin|0",
+"Which drugs block the conversion of arachidonic acid to prostaglandins and thromboxanes?|Antibiotics|Antihistamines|Statins|Insulin|NSAIDs|4"]],
+["Fat-soluble Vitamins",[
+"The fat-soluble vitamins A, D, E and K are all:|Isoprenoid compounds|Aromatic amino acids|Sugar derivatives|Nucleotides|Peptides|0",
+"Vitamin D3 (cholecalciferol) is formed in the skin from:|Cholesterol|7-Dehydrocholesterol|Ergosterol|Retinol|Squalene|1",
+"The active form of vitamin D is:|Cholecalciferol|7-Dehydrocholesterol|1,25-Dihydroxycholecalciferol|Retinoic acid|Tocopherol|2",
+"Active vitamin D mainly regulates:|Glucose levels|Oxygen transport|Fat digestion|Calcium uptake and levels|Blood clotting|3",
+"Vitamin A is also known as:|Tocopherol|Cholecalciferol|Retinol|Phylloquinone|Ubiquinone|2",
+"The vitamin A derivative that initiates the response of rod and cone cells to light is:|Retinoic acid|Retinol|Tocopherol|Retinal|Ubiquinone|3",
+"Vitamin E refers to a group of lipids called:|Retinoids|Tocopherols|Quinones|Calciferols|Naphthoquinones|1",
+"The main function of vitamin E is as a(n):|Antioxidant|Visual pigment|Clotting factor|Calcium regulator|Electron carrier|0",
+"Vitamin K is essential for the formation of active:|Fibrinogen|Hemoglobin|Insulin|Prothrombin|Collagen|3",
+"Ubiquinone (coenzyme Q) functions as a:|Visual pigment|Hormone|Clotting factor|Antioxidant vitamin|Lipophilic electron carrier|4"]]
+];
+const L="ABCDE",all=[],A={};let cur=-1;
+T.forEach((t,i)=>t[1].forEach(s=>{const p=s.split("|");all.push({t:i,q:p[0],o:p.slice(1,6),k:+p[6]})}));
+const $=id=>document.getElementById(id);
+const view=()=>all.map((x,id)=>({...x,id})).filter(x=>cur<0||x.t===cur);
+function render(){
+ const v=view(),a=v.filter(x=>x.id in A),c=a.filter(x=>A[x.id]===x.k).length;
+ $("tt").textContent=(cur<0?"All topics":T[cur][0])+" ("+v.length+" questions)";
+ $("sc").innerHTML="Answered "+a.length+"/"+v.length+" · Correct <b>"+c+"</b>";
+ $("tabs").innerHTML=["All",...T.map(t=>t[0])].map((n,i)=>`<button class="${i-1===cur?"on":""}" data-i="${i-1}">${n}</button>`).join("");
+ $("list").innerHTML=v.map((x,n)=>{const d=x.id in A;
+  return `<div class="q"><p><span class="n">${n+1}.</span>${x.q}</p>`+x.o.map((o,j)=>`<button class="o ${d?(j===x.k?"c":j===A[x.id]?"w":""):""}" data-id="${x.id}" data-j="${j}" ${d?"disabled":""}><i>${L[j]}.</i><span>${o}</span></button>`).join("")+(d?`<div class="f ${A[x.id]===x.k?"c":"w"}">${A[x.id]===x.k?"Correct":"Wrong — the correct answer is "+L[x.k]}</div>`:"")+`</div>`}).join("");
+}
+$("tabs").onclick=e=>{const b=e.target.closest("button");if(b){cur=+b.dataset.i;render();scrollTo(0,0)}};
+$("list").onclick=e=>{const b=e.target.closest(".o");if(b&&!b.disabled){A[b.dataset.id]=+b.dataset.j;render()}};
+$("rs").onclick=()=>{view().forEach(x=>delete A[x.id]);render()};
+render();
+</script></body></html>
